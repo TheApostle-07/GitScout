@@ -177,7 +177,7 @@ git push origin feature-branch
 ```
 
 ## 📝 License
-This project is licensed under the **MIT License**.
+This project is licensed under the **Masai Hackathon**.
 
 ---
 ### 🎯 **GitScout - The AI-Powered GitHub Recruiter** 🚀
