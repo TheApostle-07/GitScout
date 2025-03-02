@@ -1,0 +1,23 @@
+.student-page-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .student-page-title {
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: 2rem;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+  }
+  
+  .student-page-title:hover {
+    color: #28a745; /* Optional: Change color on hover for a subtle effect */
+  }

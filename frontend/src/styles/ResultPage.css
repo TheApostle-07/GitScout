@@ -1,0 +1,288 @@
+/* 
+  1) Import your desired font (e.g., Poppins).
+  2) Adjust colors, transitions, and spacing as needed.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Global Reset & Body Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f8fafc; /* Light neutral background */
+  color: #333;
+}
+
+/* Main Container */
+.results-container {
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+  position: relative; /* So we can position the back button to the left */
+}
+
+/* Back Button: Left-Aligned */
+.back-button {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  background-color: transparent;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #0056b3;
+}
+
+/* Candidate Details Card */
+.candidate-details-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 3rem auto 0 auto;
+  max-width: 1000px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.candidate-details-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Profile Section */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 1rem;
+}
+
+.profile-pic-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.candidate-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Decision Glow Effects (Optional) */
+.hire-glow {
+  box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.6);
+}
+
+.no-hire-glow {
+  box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.6);
+}
+
+/* Status Icon (Check / X) */
+.status-icon {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Basic Profile Info */
+.profile-info h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.profile-info p {
+  margin: 0.25rem 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Stats Section: Additional Details (followers, following, etc.) */
+.stats-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  border-top: 1px solid #eaeaea;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.stat-item {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #444;
+}
+
+/* Analysis Section: Light Green Banner with a Centered Check Icon & Message */
+.analysis-container {
+  background-color: #e0f5e0; /* Light green background */
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.analysis-container .analysis-icon {
+  font-size: 2rem;
+  color: #28a745; /* Deeper green for the check icon */
+  margin-bottom: 0.5rem;
+}
+
+.analysis-container .analysis-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2c662d; /* Darker green text */
+}
+
+.analysis-container .analysis-message {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.analysis-container .analysis-score {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Repos Section */
+.repos-section {
+  border-top: 1px solid #eaeaea;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+/* Horizontal Repo List */
+.repo-list-horizontal {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  margin: 0 auto;
+}
+
+/* Individual Repo Card */
+.repo-item {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1rem;
+  min-width: 300px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.repo-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Repo Header: Title + Possibly an Icon or Star Count */
+.repo-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.repo-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}
+
+/* If you have a repo description, style it here */
+.repo-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.25rem 0 0.5rem 0;
+  line-height: 1.4;
+}
+
+/* Icon row for stars, commits, forks, watchers, etc. */
+.repo-stats-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto; /* Push row to bottom if needed */
+  flex-wrap: wrap;
+}
+
+.repo-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Link to the Repository */
+.repo-link {
+  margin-top: 1rem;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.repo-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .stats-section {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .repo-list-horizontal {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .back-button {
+    position: static;
+    margin-bottom: 1rem;
+  }
+
+  .candidate-details-card {
+    margin-top: 2rem;
+  }
+}

@@ -1,0 +1,40 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Virtual environment
+venv/
+env/
+
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# IDE and editor settings
+.vscode/
+.idea/
+.env
+.pytest_cache/
+
+# Logs and temp files
+logs/
+*.log
+nohup.out
+
+# Secret config files (Ensure API keys are not pushed)
+config.yaml
+config.json
+config.ini
+.config/
+.secrets/

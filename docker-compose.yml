@@ -1,0 +1,19 @@
+version: '3'
+services:
+  backend:
+    build: ./backend
+    container_name: gitscout-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}  # Pass through .env or environment
+    volumes:
+      - .:/app  # optional volume
+    depends_on: []
+  frontend:
+    build: ./frontend
+    container_name: gitscout-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend

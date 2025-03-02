@@ -1,0 +1,84 @@
+/* Container styling: centered content, padding, and a subtle gradient background */
+.homepage-container {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 2rem 1rem;
+    text-align: center;
+    background: linear-gradient(135deg, #eef2f3, #8e9eab);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+  
+/* Title styling: large, bold, and with a bottom margin */
+.homepage-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+  
+/* Description styling: clear font size and spacing */
+.homepage-description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+/* Rate Limit card styling */
+.rate-limit-card {
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+/* Big text for remaining tokens */
+.rate-limit-remaining {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #0052cc;
+    margin-bottom: 0.5rem;
+}
+
+/* Medium text label */
+.rate-limit-label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+/* Small text for reset timer, in green */
+.rate-limit-timer {
+    font-size: 0.95rem;
+    color: #28a745;
+}
+
+/* Button container: space buttons evenly */
+.homepage-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* Button styling: clean white background, blue text, smooth transitions */
+.homepage-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #0052cc;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for buttons */
+.homepage-btn:hover {
+    background-color: #e6e6e6;
+    transform: translateY(-2px);
+}

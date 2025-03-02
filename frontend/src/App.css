@@ -1,0 +1,8 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff; /* Ensures no white boundary */
+  font-family: 'Poppins', sans-serif; /* Let’s centralize the font here */
+  color: #fff;
+}

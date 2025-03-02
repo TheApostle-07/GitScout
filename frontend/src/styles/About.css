@@ -1,0 +1,119 @@
+/* About Section */
+.about-section {
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff; /* Light mode background */
+    color: #333; /* Dark text for readability */
+    text-align: center;
+    line-height: 1.8;
+}
+  
+.about-title {
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: bold;
+    color: #222; /* Strong dark shade */
+    margin-bottom: 20px;
+}
+  
+.about-description {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: #555; /* Slightly softer dark shade */
+    max-width: 800px;
+    margin: 0 auto;
+}
+  
+/* Social Links Section */
+.social-links {
+    margin-top: 40px;
+}
+  
+.social-links h3 {
+    font-size: 1.8rem;
+    color: #222; /* Strong dark text */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+  
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 2rem;
+}
+  
+.social-icon {
+    color: #666; /* Neutral shade */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+  
+.social-icon:hover {
+    color: #000; /* Darker shade on hover */
+    transform: scale(1.1);
+}
+  
+/* Technologies & Skills Section */
+.skills h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    background: #000;
+    -webkit-background-clip: text;
+    margin-bottom: 30px;
+}
+  
+.skills h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: linear-gradient(90deg, #000, #444); /* Subtle gradient */
+    margin: 10px auto 0;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+  
+.skills h3:hover::after {
+    width: 80px;
+}
+  
+/* Tech Logos */
+.tech-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+  
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 22%;
+    min-width: 100px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+  
+.tech-item i {
+    font-size: 70px;
+    color: #555; /* Muted dark shade */
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+  
+.tech-item i:hover {
+    transform: scale(1.15);
+    filter: brightness(1.2);
+}
+  
+.tech-item span {
+    font-size: 1.3rem;
+    color: #444; /* Slightly lighter text */
+    text-transform: capitalize;
+}

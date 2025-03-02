@@ -1,0 +1,110 @@
+/* Import Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --bg-color: #000;           /* Page background: black */
+  --text-color: #fff;         /* Main text: white */
+  --accent-green: #28a745;     /* Accent for buttons and focus */
+  --accent-green-dark: #218838;
+  --input-border: #444;
+  --transition-speed: 0.3s;
+}
+
+/* Container for the form and analysis result */
+.student-form-container {
+  background-color: #222;      /* Dark card background */
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+/* Form styling */
+.student-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-label {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+  transition: border-color var(--transition-speed) ease;
+  font-family: var(--font-family), sans-serif;
+}
+
+.form-input::placeholder {
+  color: #666;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent-green);
+  background-color: #f9f9f9;
+}
+
+.analyze-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: var(--accent-green);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease;
+  font-family: var(--font-family), sans-serif;
+}
+
+.analyze-btn:hover {
+  background-color: var(--accent-green-dark);
+}
+
+/* Analysis result styling */
+.analysis-result {
+  margin-top: 2rem;
+  background-color: #333;
+  padding: 1.5rem;
+  border-radius: 8px;
+  color: #fff;
+  font-family: var(--font-family), sans-serif;
+}
+
+.analysis-title {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.analysis-overview {
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+.analysis-recommendation-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.recommendations-list {
+  list-style: disc;
+  margin-left: 1.5rem;
+  font-size: 1rem;
+}
+
+.recommendation-item {
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,750 @@
+/* RecruiterPage.css */
+
+/* Global resets / fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Container for the entire Recruiter Dashboard */
+  .recruiter-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  /* Title styling */
+  .recruiter-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Feedback messages */
+  .feedback-message {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+    animation: fadeIn 0.4s ease;
+  }
+  
+  /* Different types of feedback */
+  .feedback-message.success {
+    background-color: #e1f5e2;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+  }
+  .feedback-message.error {
+    background-color: #fdecea;
+    color: #c62828;
+    border: 1px solid #f5c6cb;
+  }
+  .feedback-message.info {
+    background-color: #e3f2fd;
+    color: #1976d2;
+    border: 1px solid #bbdefb;
+  }
+  
+  /* Keyframe for feedback fade in */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  /* ------------------------------
+     Job Controls (Search, Sort, etc.)
+     ------------------------------ */
+  .job-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    gap: 1rem;
+  }
+  
+  /* Search Input */
+  .search-input {
+    flex: 1;
+    min-width: 220px;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease;
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  /* Sort Select */
+  .sort-select {
+    min-width: 140px;
+    padding: 0.5rem;
+    font-size: 0.95rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.2s ease;
+  }
+  
+  .sort-select:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  /* Create Job Button (fixed) */
+  .create-job-btn-fixed {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .create-job-btn-fixed:hover {
+    background-color: #005cbf;
+    transform: scale(1.02);
+  }
+  
+  /* ------------------------------
+     Job Listing / Cards
+     ------------------------------ */
+  .job-listing {
+    margin-bottom: 3rem;
+  }
+  
+  .job-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  .job-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 1rem;
+    text-align: center;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .job-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+  
+  .job-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #007bff;
+  }
+  
+  .job-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .job-card p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  /* No jobs message */
+  .no-jobs {
+    text-align: center;
+    font-size: 1rem;
+    color: #777;
+  }
+  
+  /* Pagination */
+  .pagination {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .pagination button {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-size: 0.9rem;
+  }
+  
+  .pagination button:hover:not(:disabled) {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .pagination .active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* ------------------------------
+     Modal Overlay
+     ------------------------------ */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInModal 0.3s ease forwards;
+    z-index: 999;
+  }
+  
+  @keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fff;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 8px;
+    padding: 1.5rem;
+    position: relative;
+    animation: scaleIn 0.3s ease forwards;
+  }
+  
+  @keyframes scaleIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  /* Modal Header */
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .modal-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .close-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #666;
+    transition: color 0.2s ease;
+  }
+  
+  .close-icon:hover {
+    color: #000;
+  }
+  
+  /* Modal Body */
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* Large Modal Variation */
+  .large-modal {
+    max-width: 700px;
+  }
+  
+  /* Creation Mode Toggle Buttons */
+  .creation-mode-toggle {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .creation-mode-toggle label {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-size: 0.95rem;
+  }
+  
+  /* Hide the actual radio input */
+  .creation-mode-toggle input[type="radio"] {
+    display: none;
+  }
+  
+  /* When checked, highlight the label as active */
+  .creation-mode-toggle input[type="radio"]:checked + label {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+  }
+  
+  /* Job Form */
+  .job-form input,
+  .job-form textarea {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 0.95rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.2s ease;
+    margin-bottom: 0.75rem;
+    color: #333;
+  }
+  
+  .job-form input:focus,
+  .job-form textarea:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .job-form textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  /* Tag Input Container */
+  .tag-input-container {
+    margin: 0.5rem 0;
+  }
+  
+  .tag-input-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 500;
+  }
+  
+  .tag-input {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5rem;
+  }
+  
+  .tag-input input {
+    flex: 1;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    min-width: 80px;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    /* Use the same style as the AI tags for consistency */
+    background-color: #e3f2fd; 
+    color: #0d47a1;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    cursor: default;
+  }
+  
+  .tag-remove {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #666;
+  }
+  
+  .tag-remove:hover {
+    color: #000;
+  }
+  
+  /* AI Generate Section */
+  .ai-generate-section {
+    background-color: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 1rem;
+    animation: fadeIn 0.3s ease;
+    color: #333;
+  }
+  
+  .ai-generate-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    margin-top: 0.5rem;
+  }
+  
+  .ai-generate-btn:hover {
+    background-color: #005cbf;
+    transform: scale(1.02);
+  }
+  
+  /* Generated Tags */
+  .generated-tags {
+    margin-top: 0.75rem;
+  }
+  
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  /* Fieldset for basic metrics */
+  fieldset {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.75rem;
+    text-align: left;
+  }
+  
+  fieldset legend {
+    padding: 0 0.3rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #666;
+  }
+  
+  /* Create Job Button inside the form */
+  .create-job-btn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+  
+  .create-job-btn:hover {
+    background-color: #218838;
+    transform: scale(1.02);
+  }
+  
+  /* Loader */
+  .loader {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #007bff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 0.7s linear infinite;
+    display: inline-block;
+  }
+  /* Loader wrapper for centering */
+  .loader-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Adjust these dimensions as needed */
+    width: 100%;
+    height: 100%;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* ------------------------------
+   Candidate Analysis Section
+   ------------------------------ */
+  .candidate-analysis {
+    margin-top: 2rem;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .back-button {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-bottom: 1.5rem;
+  }
+  
+  .back-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .candidate-analysis h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .candidate-analysis p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #555;
+  }
+  
+  /* Input and Analyze Button Container */
+  .input-button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Seamless Input */
+  .input-container {
+    flex: 1;
+    position: relative;
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 1.1rem;
+  }
+  
+  .custom-input {
+    width: 100%;
+    padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+    border: none;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .custom-input:focus {
+    outline: none;
+  }
+  
+  /* Seamless Analyze Button */
+  .analyze-btn {
+    background-color: #17a2b8;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .analyze-btn:hover {
+    background-color: #138496;
+    transform: scale(1.02);
+  }
+  
+  .back-button-analyze {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: inline-flex;       /* so the icon and text align nicely */
+    align-items: center;        /* vertically center icon & text */
+    gap: 0.3rem;                /* small gap between icon & text */
+  }
+  
+  .back-button-analyze:hover {
+    background-color: #e0e0e0;
+  }
+
+  .analysis-header {
+    text-align: left;
+    margin-bottom: 1rem; /* space below the button */
+  }
+  
+  /* File Upload Button */
+  .file-upload {
+    margin-bottom: 1rem;
+  }
+  
+  .upload-btn {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .upload-btn:hover {
+    background-color: #e0a800;
+    transform: scale(1.02);
+  }
+  
+  .upload-icon {
+    font-size: 1.1rem;
+  }
+  
+  #fileUpload {
+    display: none;
+  }
+  
+  /* File modal preview */
+  .file-modal {
+    max-width: 1900px;
+    max-height: 1500px;
+  }
+  
+  .csv-table-container {
+    max-height: 700px;
+    overflow-y: auto;
+    margin: 1rem 0;
+  }
+  
+  .csv-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .csv-table-container th,
+  .csv-table-container td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    color: #000;
+    font-size: 0.9rem;
+  }
+  
+  .confirm-btn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .confirm-btn:hover {
+    background-color: #218838;
+    transform: scale(1.02);
+  }
+  
+  .confirm-icon {
+    font-size: 1.2rem;
+  }
+  
+  /* Analysis Result */
+  .analysis-result {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: #e3f2fd;
+    border: 1px solid #bbdefb;
+    border-radius: 4px;
+  }
+  
+  .analysis-result h4 {
+    margin-bottom: 0.5rem;
+    color: #0d47a1;
+    font-size: 1rem;
+  }
+  .analysis-result p {
+    font-size: 0.95rem;
+    color: #333;
+  }
+
+/* --------------------------------------
+   Add styling for required fields below
+   -------------------------------------- */
+
+/* Highlight required fields if empty/invalid */
+.job-form input:required:invalid,
+.job-form textarea:required:invalid {
+  border-color: #dc3545; /* red border for invalid required fields */
+}
+
+/* Keep modal content visible on screen; allow scrolling inside modal if needed */
+.modal-content {
+    position: relative; 
+    max-height: 80vh;     /* or any preferred max height */
+    overflow-y: auto;     /* scroll inside the modal if content exceeds 80vh */
+  }
+  
+  /* Make manual or AI tags scrollable */
+  .tag-input, 
+  .generated-tags .tags-container {
+    max-height: 150px;    /* set desired max height for the tags area */
+    overflow-y: auto;     /* scroll if there are many tags */
+  }
+  
+  /* Optional smaller loader for buttons (if desired) */
+  .loader-button {
+    width: 20px;
+    height: 20px;
+    border-width: 3px;
+    margin-right: 8px;  /* small spacing if you want text after the spinner */
+  }

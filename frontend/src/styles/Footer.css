@@ -1,0 +1,16 @@
+/* Footer rendered below the content */
+.footer {
+    background-color: #f7f7f7;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    margin-top: 2rem; /* space above footer so it naturally falls below content */
+  }
+  
+  /* Hover state for footer */
+  .footer-hover {
+    background-color: #e0e0e0;
+  }
