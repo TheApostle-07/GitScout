@@ -42,7 +42,6 @@ GitScout is an AI-powered recruiting tool that analyzes GitHub contributions, re
 - **GitHub Actions** (CI/CD)
 - **Docker & Docker Compose** (Deployment)
 - **Fine-Grained GitHub PATs** (Secure API Access)
-- **JWT Authentication** (User Security)
 
 ## 📂 Folder Structure
 ```bash
@@ -93,7 +92,6 @@ GitScout/
 ## 🔧 Installation & Setup
 ### Prerequisites
 - **Python 3.9+**
-- **Node.js 18+**
 - **Docker & Docker Compose**
 
 ### 🚀 Backend Setup
