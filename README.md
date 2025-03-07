@@ -4,9 +4,9 @@
 GitScout is an AI-powered recruiting tool that analyzes GitHub contributions, repository metadata, and commit history to evaluate developers and match them against an ideal candidate profile using **vector embeddings** and **cosine similarity**. This system provides recruiters with data-driven insights to make informed hiring decisions.
 
 ## 🌍 Live Demo & Deployment
-- **Frontend:** [Deployed Link](https://voluble-mooncake-8b0889.netlify.app/) 
-- **Backend API:** [Deployed API Docs](https://gitscout-backend-myio.onrender.com/docs) 
-- **GitHub Repository:** [GitScout on GitHub](https://github.com/TheApostle-07/GitScout) 
+- **Frontend:** <a href="https://voluble-mooncake-8b0889.netlify.app/" target="_blank">Deployed Link</a>
+- **Backend API:** <a href="https://gitscout-backend-myio.onrender.com/docs" target="_blank">Deployed API Docs</a>
+- **GitHub Repository:** <a href="https://github.com/TheApostle-07/GitScout" target="_blank">GitScout on GitHub</a>
 
 ## 📌 Features
 ### ✅ Recruiters & Companies
